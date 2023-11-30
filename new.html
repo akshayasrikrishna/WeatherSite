@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Hour', 'Chance of Rain'],
+          ['11:00', 20],
+          ['12:00', 30],
+          ['13:00', 10],
+          ['14:00', 25],
+          ['15:00', 15],
+          ['16:00', 10],
+          ['17:00', 15],
+        ]);
+
+        var options = {
+        // title: 'Upcomi',
+          curveType: 'none', // Use 'none' for linear lines
+          series: {
+            0: { type: 'line' }, // Display the chance of rain line
+          },
+          vAxes: {
+            0: { title: 'Chance of Rain (%)' },
+          },
+          hAxis: { title: 'Hour' },
+          legend: { position: 'none' }, // Hide the legend
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+        chart.draw(data, options);
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .curvedRectangle {
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #E4F1FF; /* Dark blue color */
+        border-radius: 10% 10% 10% 10%; /* Curved top corners */
+        width: 1000px;
+        height: 620px;
+      }
+ .curvedRectangler {
+        position: absolute;
+        top: 180px;
+        left: 62%;
+        transform: translateX(-50%);
+        background-color: white; /* Dark blue color */
+        border-radius: 10% 10% 10% 10%; /* Curved top corners */
+        width: 500px;
+        height: 250px;
+      }
+
+      .curvedRectanglem {
+        position: absolute;
+        top: 100px;
+        left: 30%;
+        transform: translateX(-50%);
+        background-color: #5C9CE5; /* Dark blue color */
+        border-radius: 10% 10% 10% 10%; /* Curved top corners */
+        width: 400px;
+        height: 620px;
+        overflow: hidden; /* Hide overflow for rounded image */
+      }
+
+      .curvedRectanglem img {
+        mix-blend-mode: darken;
+        border-radius: 10% 10% 10% 10%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .unitC {
+        position: absolute;
+        top: 8%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+      }
+
+      .unitF {
+        position: absolute;
+        top: 8%;
+        left: 97%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+      }
+
+      .temp {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 100px;
+      }
+
+      .deg {
+        position: absolute;
+        top: 25%;
+        left: 70%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+      }
+
+      .sunny {
+        position: absolute;
+        top: 42%;
+        left: 48%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+      }
+
+      .location {
+        position: absolute;
+        top: 15%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 15px;
+      }
+
+      .date {
+        position: absolute;
+        top: 20%;
+        left: 22%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 10px;
+      }
+
+      .time1 {
+        position: absolute;
+        top: 15%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 15px;
+      }
+
+      .time2 {
+        position: absolute;
+        top: 20%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 15px;
+      }
+
+      .icon1 {
+        position: absolute;
+        top: 8%;
+        left: 8%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 24px;
+      }
+
+      .icon2 {
+        position: absolute;
+        top: 8%;
+        left: 48%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 40px;
+      }
+
+      .icon3a {
+        position: absolute;
+        top: 7%;
+        left: 72%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 5px;
+      }
+
+      .icon3 {
+        position: absolute;
+        top: 8%;
+        left: 85%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 35px;
+      }
+
+      .icon3b {
+        position: absolute;
+        top: 7%;
+        left: 94%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 5px;
+      }
+
+      .icon3c {
+        position: absolute;
+        top: 15%;
+        left:8%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 15px;
+      }
+
+      .icon3d {
+        position: absolute;
+        top: 15%;
+        left:80%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 10px;
+      }
+
+      .icon3e {
+        position: absolute;
+        top: 20%;
+        left:80%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 10px;
+      }
+
+      .icon4 {
+        position: absolute;
+        top: 30%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 45px;
+      }
+
+      .icon5 {
+        position: absolute;
+        top: 30%;
+        left: 90%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 45px;
+      }
+
+      .icon6 {
+        position: absolute;
+        top: 42%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+      }
+  .weather1 {
+        position: absolute;
+        top: 18%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        color: grey;
+        font-size: 20px;
+      }
+  .weather2 {
+        position: absolute;
+        top: 18%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        color: grey;
+        font-size: 20px;
+      }
+  .weather3 {
+        position: absolute;
+        top: 18%;
+        left: 42%;
+        transform: translate(-50%, -50%);
+        color: orange;
+        font-size: 20px;
+      }
+  .weather4 {
+        position: absolute;
+        top: 18%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: grey;
+        font-size: 20px;
+      }
+  .weather5 {
+        position: absolute;
+        top: 18%;
+        left: 58%;
+        transform: translate(-50%, -50%);
+        color: grey;
+        font-size: 20px;
+      }
+  .weather6 {
+        position: absolute;
+        top: 18%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        color: grey;
+        font-size: 20px;
+      }
+  .weather7 {
+        position: absolute;
+        top: 18%;
+        left: 72%;
+        transform: translate(-50%, -50%);
+        color: orange;
+        font-size: 20px;
+      }
+  .temp1 {
+        position: absolute;
+        top: 26%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+      }
+  .temp2 {
+        position: absolute;
+        top: 26%;
+        left: 35%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+      }
+  .temp3 {
+        position: absolute;
+        top: 26%;
+        left: 42%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+      }
+  .temp4 {
+        position: absolute;
+        top: 26%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+      }
+  .temp5 {
+        position: absolute;
+        top: 26%;
+        left: 58%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+      }
+  .temp6 {
+        position: absolute;
+        top: 26%;
+        left: 65%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+      }
+  .temp7 {
+        position: absolute;
+        top: 26%;
+        left: 72%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+      }
+.uphours {
+        position: absolute;
+        top: 8%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        font-size: 15px;
+      }
+      #curve_chart {
+        position: absolute;
+        top: 28%;
+        right: 10%;
+        width: 400px;
+        height: 170px;
+      }
+
+        .whiteBox {
+            position: absolute;
+            width: 155px;
+            height: 110px;
+            background-color: white;
+	
+
+            margin-top: 45px;
+            border-radius: 7%;
+        }
+        #box1 {
+            top: 240px;
+            left: 10px;
+        }
+
+        #box2 {
+            top: 240px;
+            left: 190px;
+        }
+
+        #box3 {
+            top: 240px;
+            left: 370px;
+        }
+
+        #box4 {
+            top: 370px;
+            left: 10px;
+        }
+
+        #box5 {
+            top: 370px;
+            left: 190px;
+        }
+
+        #box6 {
+            top: 370px;
+            left: 370px;
+        }
+  .progress-segment {
+      display: flex;
+      margin-bottom: 2em;
+      position: relative;
+      top: 80px;
+      left: 10px;
+      width: 90%;
+    }
+  .segment-blue,
+    .segment-mixed,
+    .segment-grey {
+      flex: 1;
+      margin-right: 2px;
+      height: 6px;
+      border-radius: 3px;
+      position: relative;
+    }
+
+    .segment-blue {
+      background: #5C9CE5;
+    }
+
+    .segment-mixed {
+      background: linear-gradient(to right, #5C9CE5 0%, #5C9CE5 40%, lightgray 40%, lightgray 100%);
+    }
+
+    .segment-grey {
+      background: lightgray;
+    }
+  .segment-partial-bluee {
+      flex: 1; /* Equal width for the segments */
+      margin-right: 2px;
+      height: 6px;
+      border-radius: 3px;
+      position: relative;
+      background: linear-gradient(to right, #5C9CE5 0%, #5C9CE5 50%, lightgray 50%, lightgray 100%);
+    }
+.degree-label {
+      font-size: 8px;
+    }
+   .progress-bar {
+margin-right:10px;
+left:5px;
+      height: 6px;
+      border-radius: 3px;
+      align:center;
+      top:80px;
+      background: linear-gradient(to right, #5C9CE5 0%, #5C9CE5 60%, lightgray 60%, lightgray 100%);
+      position: relative;
+    }
+
+    .label {
+      font-family: 'Nunito', sans-serif;
+      font-size: 10px;
+      color: #666;
+      width: 100%;
+      position: absolute;
+      top: -15px;
+      left: 10;
+    }
+
+        .item, .uncovered {
+            flex: 1; /* Equal width for the segments */
+            margin-right: 2px;
+            height: 6px;
+            border-radius: 3px;
+            position: relative;
+        }
+
+        .item {
+            background-color: #5C9CE5;
+        }
+
+        .uncovered {
+            flex: 0.82; /* Adjusted width to represent 82% for the uncovered part */
+            background: linear-gradient(to right, #5C9CE5 0%, #5C9CE5 50%, lightgray 50%, lightgray 100%);
+        }
+
+        .label {
+            font-family: 'Nunito', sans-serif;
+            font-size: 10px;
+            color: #666; /* Grey color for the labels */
+            width: 100%;
+            position: absolute;
+            top: -15px; /* Adjusted position for labels above the segments */
+            left: 10; /* Center the label within the segment */
+        }
+.progress{
+  position: relative;
+  margin: 2px;
+  float:left;
+  text-align: center;
+top:40px;
+left:30px;
+}
+.barOverflow{ /* Wraps the rotating .bar */
+  position: relative;
+  overflow: hidden; /* Comment this line to understand the trick */
+  width: 90px; height: 45px; /* Half circle (overflow) */
+  margin-bottom: -14px; /* bring the numbers up */
+}
+.bar{
+  position: absolute;
+  top: 0; left: 0;
+  width: 90px; height: 90px; /* full circle! */
+  border-radius: 50%;
+  box-sizing: border-box;
+  border: 5px solid  #0bf;     /* half gray, */
+  border-bottom-color: #0bf;  /* half azure */
+  border-right-color: #eee;
+}
+  .blueicons1{
+        position: absolute;
+   top: 18%;
+        left: 78%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 20px;
+background-color: #0bf;
+      }
+.headings{
+  position: absolute;
+   top: 22%;
+        left: 34%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 14px;
+
+      }
+.percentages{
+  position: absolute;
+   top: 42%;
+        left: 45%;
+        transform: translate(-50%, -50%);
+        color: black ;
+        font-size: 14px;
+
+      }
+.heading1{
+  position: absolute;
+   top: 108%;
+        left: 25%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 14px;
+
+      }
+.heading2{
+  position: absolute;
+   top: -10%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 16px;
+
+      }
+ #dropdown {
+            position: absolute;
+            top: 8px;
+            left: 130px;
+            width: 126px;
+            border-radius: 4px;
+        }
+
+        .next {
+            background-color: #F1F1F1;
+            color: black;
+            position: absolute;
+            top: 10px;
+            left: 400px;
+            text-decoration: none;
+            padding: 5px;
+            border-radius: 4px;
+        }
+ .dots{
+        position: absolute;
+   top: -15%;
+        left: 88%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 30px;
+      }
+ .account{
+        position: absolute;
+   top: -15%;
+        left: 98%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 30px;
+      }
+
+    </style>
+
+  </head>
+  <body bgcolor="#B5D8FF">
+    <!-- Curved rectangle -->
+    <div class="curvedRectangle"></div>
+
+    <!-- Curved rectangle with image and icon -->
+    <div class="curvedRectanglem">
+      <img src="newyork.jpg" alt="New York" height="600px" width="400px">
+      <span class="material-icons icon1">add_box</span>
+      <span class="material-icons icon2">more_horiz</span>
+      <span class="material-icons icon3a">circle</span><span class="unitC">C</span>
+      <span class="material-icons icon3">toggle_off</span>
+      <span class="material-icons icon3b">circle</span><span class="unitF">F</span>
+      <span class="material-icons icon3c">near_me</span><span class="location">New York , USA </span>
+      <span class="material-icons icon3d">wb_twilight</span><span class="time1">07:19 </span>
+      <span class="date">Today , 28 Sept </span><span class="material-icons icon3e">wb_twilight</span>
+      <span class="time2">19:32 </span>
+      <span class="material-icons icon4">navigate_before</span><span class="temp">27</span>
+      <span class="material-icons deg">radio_button_unchecked</span>
+      <span class="material-icons icon5">keyboard_arrow_right</span>
+      <span class="material-icons icon6">light_mode</span><span class="sunny">Sunny</span>
+    </div>
+<div class="curvedRectangler">
+<div class="heading2"><b>Welcome back Isabella!</b><br>Check out today's weather information</div>
+<span class="material-icons dots">more_horiz</span><span class="material-icons account">account_circle</span>
+       <div id="dropdown">
+                <select id="dropdown">
+                    <option value="1">Rain Precipitation</option>
+                </select>
+            </div>
+            <div><a href="#" class="next"><b>Next days &raquo;</b></a></div>
+
+
+
+
+
+<div class="uphours"><b>Upcoming Hours</b></div>
+  <span class="material-icons weather1">cloud</span>  <span class="material-icons weather2">cloud</span><span class="material-icons weather3">wb_sunny</span><span class="material-icons weather4">thunderstorm</span>
+ <span class="material-icons weather5">cloud</span>  <span class="material-icons weather6">cloud</span><span class="material-icons weather7">wb_sunny</span>
+<span class="temp1">27º</span><span class="temp2">28º</span><span class="temp3">29º</span><span class="temp4">27º</span><span class="temp5">30º</span><span class="temp6">27º</span><span class="temp7">29º</span>
+    <div id="curve_chart"></div>
+<div class="heading1"><b>More details of today's weather</b></div>
+
+            <div class="whiteBox" id="box1">
+<div class="headings"><b>Humidity</b></div>
+<div class="percentages"><b>82% </b>bad</div>
+<span class="material-icons blueicons1">water_drop</span>
+                <div class="progress-segment">
+                    <div class="label">Good</div><div class="item"></div>
+                    <div class="label" style="text-align:center";>Normal</div><div class="item"></div>
+                    <div class="label" style="text-align:right">Bad</div><div class="uncovered"></div>
+                </div>
+            </div>
+            <div class="whiteBox" id="box2">
+<div class="headings"><b>Wind</b></div>
+<span class="material-icons blueicons1">air</span>
+                <div class="progress">
+  <div class="barOverflow">
+    <div class="bar"></div>
+  </div>
+  <span>30</span>km/hour</div>
+
+            </div>
+            <div class="whiteBox" id="box3">
+<div class="headings"><b>Precipitation</b></div>
+<div class="percentages"><b>1.4 cm</b></div>
+<span class="material-icons blueicons1">thunderstorm</span>
+
+  <div class="progress-segment">
+            <div class="segment-blue"><div class="label">0</div></div>
+            <div class="segment-mixed"><div class="label">10</div></div>
+            <div class="segment-grey"><div class="label">20</div></div>
+            <div class="segment-grey"><div class="label">30</div></div>
+            <div class="segment-grey"><div class="label">40</div></div>
+            <div class="segment-grey"><div class="label">50</div></div>
+            <div class="segment-grey"><div class="label">60</div></div>
+            <div class="segment-grey"><div class="label">70</div></div>
+            <div class="segment-grey"><div class="label">80</div></div>
+            <div class="segment-grey"><div class="label">90</div></div>
+          </div></div>
+            <div class="whiteBox" id="box4"> 
+<div class="headings"><b>UV Index</b></div>
+<div class="percentages"><b>4   </b>medium</div>
+<span class="material-icons blueicons1">light_mode</span>
+<div class="progress-segment">
+      <div class="segment-blue"><div class="label">0-2</div></div>
+      <div class="segment-partial-bluee"><div class="label">3-5</div></div>
+      <div class="segment-grey"><div class="label">6-7</div></div>
+      <div class="segment-grey"><div class="label">8-10</div></div>
+      <div class="segment-grey"><div class="label">11+</div></div>
+    </div></div>
+            <div class="whiteBox" id="box5">
+<div class="headings"><b>Feels Like</b></div>
+<div class="percentages"><b>30º</b></div>
+<span class="material-icons blueicons1">device_thermostat</span>
+ <div class="progress-bar">
+      <div class="label degree-label" style="text-align:left;">0&deg;</div>
+      <div class="label degree-label" style="text-align:center;">25&deg;</div>
+      <div class="label degree-label" style="text-align: right;">50&deg;</div>
+    </div></div>
+            <div class="whiteBox" id="box6">
+<div class="headings"><b>Chance Of Rain</b></div>
+<div class="percentages"><b>42%</b></div>
+<span class="material-icons blueicons1">thunderstorm</span>
+ <div class="progress-bar">
+            <div class="label degree-label" style="text-align:left;">0%</div>
+            <div class="label degree-label" style="left:22%;">25%</div>
+            <div class="label degree-label" style="text-align:center;">50%</div>
+            <div class="label degree-label" style="left:62%;">75%</div>
+            <div class="label degree-label" style="text-align: right;">100%</div>
+        </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    <!-- Your other content goes here -->
+  </body>
+</html>
